@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8"></meta>
+<meta name="viewport"
+	content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+<title>Insert title here</title>
+</head>
+<body>
+<tr th:each="category, iStat : ${categories}">
+            <th scope="row" th:text="${iStat.index + 1}">1</th>
+            <td th:text="${category.name}">Larry</td>
+
+            <td><a href="" th:href="@{/admin/categories/delete/{id}(id=${category.id})}" class="btn btn-danger">Delete</a></td>
+            <td><a href="" th:href="@{/admin/categories/update/{id}(id=${category.id})}" class="btn btn-warning">Update</a></td>
+
+        </tr>
+
+</body>
+</html>
